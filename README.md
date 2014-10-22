@@ -9,7 +9,7 @@ App file
 'Jrmadsen67\MahanaHierarchyLaravel\MahanaHierarchyLaravelServiceProvider'
 
 (Optional)
-'Hierarchy' 	  => 'Jrmadsen67\MahanaHierarchyLaravel\Facades\HierarchyFacade'
+'MahanaHierarchy' 	  => 'Jrmadsen67\MahanaHierarchyLaravel\Facades\HierarchyFacade'
 
 Migrate:
 ==========

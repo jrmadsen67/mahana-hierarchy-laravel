@@ -61,7 +61,7 @@ class HierarchyEloquentRepository implements HierarchyRepositoryInterface
 
     public function get_one($id)
     {
-    	return Hierarchy::find($id);
+        return Hierarchy::find($id);
     }
 
 
@@ -148,17 +148,14 @@ class HierarchyEloquentRepository implements HierarchyRepositoryInterface
 
     public function update($id, $data)
     {
-        $result = Hierarchy::find($id);
-        $result->fill($data);
-        $result->save();
-
-        return $result;        
+        $result = Hierarchy::where($this->primary_key, '=',$id)->update($data);
+        return $this->get_one($id);      
     }
 
     public function delete($id, $with_children)
     {
         $result = Hierarchy::where(function($query) use ($id, $with_children){
-            $query->where('id', '=', $id);
+            $query->where($this->primary_key, '=', $id);
             if ($with_children)
             {
                 $parent = $this->get_one($id);
