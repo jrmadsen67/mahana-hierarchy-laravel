@@ -11,7 +11,6 @@ interface HierarchyRepositoryInterface
 	public function get_ancestors($id, $remove_this);
 	public function get_parent($id);
 	public function get_grouped_children($top_id);
-	public function where($params);
 	public function insert($data);
 	public function update($id, $data);
 	public function delete($id, $with_children);

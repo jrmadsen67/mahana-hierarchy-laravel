@@ -25,7 +25,7 @@ class MahanaHierarchyLaravel {
     *
     * @param $top_id integer - allows you to return only from a certain point  (optional)
     *
-    * @return result_array
+    * @return Collection
     */
     public function get($top_id=0)
     {
@@ -57,7 +57,7 @@ class MahanaHierarchyLaravel {
     *
     * @param $parent_id - integer - parent id of child records
     *
-    * @return result_array
+    * @return Collection
     */
     public function get_children($parent_id)
     {
@@ -74,7 +74,7 @@ class MahanaHierarchyLaravel {
     *
     * @param $parent_id - integer - parent id of descendent records
     *
-    * @return result_array
+    * @return Collection
     */
     public function get_descendents($parent_id)
     {       
@@ -91,7 +91,7 @@ class MahanaHierarchyLaravel {
     * @param $id - integer - id of descendent record
     * @param $remove_this - boolean - whether to include or exclude record of id
     *
-    * @return result_array
+    * @return Collection
     */
     public function get_ancestors($id, $remove_this = false)
     {       
@@ -124,7 +124,7 @@ class MahanaHierarchyLaravel {
     *
     * @param $top_id - integer - parent id of descendent records (optional)
     *
-    * @return result_array
+    * @return Collection
     */
     public function get_grouped_children($top_id=0)
     {
