@@ -110,24 +110,6 @@ class HierarchyEloquentRepository implements HierarchyRepositoryInterface
         return $grouped_result;        
     }
 
-
-    //chainable where clause
-    public function where($params)
-    {
-    //     $params = func_get_args();
-
-    //     if (count($params) == 1)
-    //     {
-    //         $this->db->where($params[0]);
-    //     }
-    //     else
-    //     {
-    //         $this->db->where($params[0], $params[1]);
-    //     }
-    //     return $this;
-    }
-
-
     public function insert($data)
     {
         if(!empty($data['parent_id']))
