@@ -1,0 +1,23 @@
+{
+    "name": "jrmadsen67/mahana-hierarchy-laravel",
+    "description": "",
+    "authors": [
+        {
+            "name": "Jeff Madsen",
+            "email": "jrmadsen67@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Jrmadsen67\\MahanaHierarchyLaravel\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
