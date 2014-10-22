@@ -1,6 +1,10 @@
 {
     "name": "jrmadsen67/mahana-hierarchy-laravel",
-    "description": "",
+    "description": "A hierarchy management package",
+    "keywords": [
+        "laravel",
+        "hierarchy"
+    ],    
     "authors": [
         {
             "name": "Jeff Madsen",
