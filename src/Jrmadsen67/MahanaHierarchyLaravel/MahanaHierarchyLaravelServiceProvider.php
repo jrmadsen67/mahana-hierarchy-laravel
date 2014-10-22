@@ -29,11 +29,11 @@ class MahanaHierarchyLaravelServiceProvider extends ServiceProvider {
 	public function register()
 	{
 
-        $app['mahana_hierarchy_eloquent'] = function () {
+        $this->app['mahana_hierarchy_eloquent'] = function () {
             return new \Jrmadsen67\MahanaHierarchyLaravel\repositories\Hierarchy\HierarchyEloquentRepository;
         };    
 
-        $app['mahana_hierarchy'] = function () {
+        $this->app['mahana_hierarchy'] = function () {
             return new \Jrmadsen67\MahanaHierarchyLaravel\MahanaHierarchyLaravel(
                 $this->app['mahana_hierarchy_eloquent']
             );
