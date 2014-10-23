@@ -10,9 +10,9 @@ A complete description of the functionality is located here: http://www.codebyje
 
 Available (recommended) via composer:
 
-{
-	"require": "jrmadsen67/mahana-hierarchy-laravel": "dev-master"
-}
+	"require": {
+		 "jrmadsen67/mahana-hierarchy-laravel": "dev-master"
+	}
 
 In you Laravel app.php file add this to providers:
 
