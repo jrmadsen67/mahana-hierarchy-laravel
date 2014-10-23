@@ -46,13 +46,15 @@ class HierarchyEloquentRepository implements HierarchyRepositoryInterface
     {
         $query = \DB::table($this->table);
 
+        // if $top_id == 0, we want everything
         if (!empty($top_id))
         {
             $parent = $this->get_one($top_id);
-            if (!empty($parent))
+            if (empty($parent))
             {
-                $query->where($this->lineage, 'LIKE', $parent[$this->lineage] .'%');
+                return [];
             }               
+            $query->where($this->lineage, 'LIKE', $parent[$this->lineage] .'%');
         }   
         $items = $query->orderBy($this->lineage)->get();
         return $items;
