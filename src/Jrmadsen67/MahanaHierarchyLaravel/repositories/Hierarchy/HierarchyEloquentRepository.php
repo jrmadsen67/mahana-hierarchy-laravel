@@ -68,7 +68,7 @@ class HierarchyEloquentRepository implements HierarchyRepositoryInterface
 
 
     public function get_children($parent_id)
-    {       
+    {      
         return Hierarchy::where($this->parent_id, '=', $parent_id)->orderBy($this->lineage)->get();
     }
 
@@ -104,7 +104,6 @@ class HierarchyEloquentRepository implements HierarchyRepositoryInterface
     public function get_grouped_children($top_id){
 
         $result = $this->get($top_id);
-
         if (empty($result)) return array();
 
         $grouped_result = $this->_findChildren($result);
@@ -114,11 +113,12 @@ class HierarchyEloquentRepository implements HierarchyRepositoryInterface
 
     public function insert($data)
     {
+        $data[$this->deep] = 0;
         if(!empty($data['parent_id']))
         {
             //get parent info
-            $parent = $this->get_one($data['parent_id']);
-            $data['deep'] = $parent['deep'] + 1;
+            $parent = $this->get_one($data[$this->parent_id]);
+            $data[$this->deep] = $parent[$this->deep] + 1;
         }   
 
         $newRecord = Hierarchy::create($data);

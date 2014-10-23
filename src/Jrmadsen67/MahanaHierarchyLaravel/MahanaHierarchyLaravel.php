@@ -29,11 +29,7 @@ class MahanaHierarchyLaravel {
     */
     public function get($top_id=0)
     {
-        $items = $this->hierarchy_repo->get($top_id);
-
-        // error handle
-
-        return $items;      
+        return $this->hierarchy_repo->get($top_id);     
     }
     
     /**
@@ -43,11 +39,12 @@ class MahanaHierarchyLaravel {
     *
     * @return row_array
     */
-    public function get_one($id)
+    public function get_one($id=0)
     {
+        if (empty($id)) return [];
 		$item = $this->hierarchy_repo->get_one($id); 
 
-        // error handle
+        if (empty($item)) return [];
 
         return $item->toArray();                 
     }
@@ -59,13 +56,12 @@ class MahanaHierarchyLaravel {
     *
     * @return Collection
     */
-    public function get_children($parent_id)
+    public function get_children($parent_id=0)
     {
+        if (empty($parent_id)) return [];
         $items = $this->hierarchy_repo->get_children($parent_id); 
 
-        // error handle
-
-        return $items;         
+        return $items->toArray();         
     } 
 
     
@@ -78,11 +74,12 @@ class MahanaHierarchyLaravel {
     */
     public function get_descendents($parent_id)
     {       
+        if (empty($parent_id)) return [];
         $items = $this->hierarchy_repo->get_descendents($parent_id); 
 
-        // error handle
+        if (empty($item)) return [];
 
-        return $items;     
+        return $items->toArray();       
     }
     
     /**
@@ -95,11 +92,12 @@ class MahanaHierarchyLaravel {
     */
     public function get_ancestors($id, $remove_this = false)
     {       
+        if (empty($id)) return [];
         $items = $this->hierarchy_repo->get_ancestors($id, $remove_this); 
 
-        // error handle
+        if (empty($items)) return [];
 
-        return $items;   
+        return $items->toArray();     
     }
     
     /**
@@ -128,11 +126,7 @@ class MahanaHierarchyLaravel {
     */
     public function get_grouped_children($top_id=0)
     {
-        $items = $this->hierarchy_repo->get_grouped_children($top_id); 
-
-        // error handle
-
-        return $items;   
+        return $this->hierarchy_repo->get_grouped_children($top_id);   
     }   
     
     /**
