@@ -1,12 +1,10 @@
 ###Mahana Hierarchy Laravel###
-========================
 
 Laravel package version of the Mahana Hierarchy module found here: https://github.com/jrmadsen67/mahana-hierarchy
 
 A complete description of the functionality is located here: http://www.codebyjeff.com/blog/2012/10/nested-data-with-mahana-hierarchy-library
 
 ###Installation###
-============
 
 Available (recommended) via composer:
 
@@ -36,17 +34,14 @@ You may run these line to check that the installation is correct:
 A data seeder for experimenting and testing is coming soon.
 
 ###Configuration###
-=============
 
 Original found in /config, a customizable version will be pushed very shortly and instructions added here.
 
 ###Differences in this release###
-===========================
 
 Aside from being a Laravel package, I have not yet fully set up the configuration to allow multiple instances and to easily change all the tabel and field names. This is coming very shortly (the main library is already set up this way, but supporting classes are not).
 
 ###Testing###
-=======
 
 This is fully tested, but proper Unit Testing is not yet included until done a little more...er, "properly".
 
