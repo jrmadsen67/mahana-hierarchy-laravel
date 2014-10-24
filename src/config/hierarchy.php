@@ -7,6 +7,8 @@ return [
 	'table'             => 'hierarchy',
 	
 	'primary_key'       => 'id',
+
+	'name'				=> 'name',
 	
 	'parent_id'         => 'parent_id',
 	

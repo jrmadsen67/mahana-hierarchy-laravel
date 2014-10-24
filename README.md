@@ -39,6 +39,9 @@ Table name and fields are completely configurable to your needs. Simply publish 
 
 	php artisan config:publish jrmadsen67/mahana-hierarchy-laravel
 
+IMPORTANT! If you wish to use the included migration, run the publish config line BEFORE the migration and your new table 
+name and fields will be used.
+ 
 ###Differences in this release###
 
 Aside from being a Laravel package, I have not yet fully set up the configuration to allow multiple instances and to easily change all the tabel and field names. This is coming very shortly (the main library is already set up this way, but supporting classes are not).

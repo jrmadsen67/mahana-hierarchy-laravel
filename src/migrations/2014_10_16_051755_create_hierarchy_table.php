@@ -12,13 +12,13 @@ class CreateHierarchyTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('hierarchy', function(Blueprint $table)
+		Schema::create(\Config::get('mahana-hierarchy-laravel::hierarchy.table'), function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->string('name', 55);
-			$table->integer('parent_id')->nullable();
-			$table->text('lineage')->nullable();
-			$table->integer('deep');
+			$table->increments(\Config::get('mahana-hierarchy-laravel::hierarchy.primary_key'));
+			$table->string(\Config::get('mahana-hierarchy-laravel::hierarchy.name'), 55);
+			$table->integer(\Config::get('mahana-hierarchy-laravel::hierarchy.parent_id'))->nullable();
+			$table->text(\Config::get('mahana-hierarchy-laravel::hierarchy.lineage'))->nullable();
+			$table->integer(\Config::get('mahana-hierarchy-laravel::hierarchy.deep'));
 			$table->softDeletes();
 			$table->timestamps();
 		});
@@ -31,7 +31,7 @@ class CreateHierarchyTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('hierarchy');
+		Schema::drop(\Config::get('mahana-hierarchy-laravel::hierarchy.table'));
 	}
 
 }
