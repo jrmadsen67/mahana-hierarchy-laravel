@@ -97,7 +97,7 @@ class HierarchyEloquentRepository implements HierarchyRepositoryInterface
         $current = $this->get_one($id);
         if (empty($current)) return array();
 
-        return Hierarchy::where($this->primary_key, '=', $current['parent_id'])->get();
+        return Hierarchy::where($this->primary_key, '=', $current[$this->parent_id])->get();
     }
 
 
