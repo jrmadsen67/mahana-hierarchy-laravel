@@ -35,7 +35,9 @@ A data seeder for experimenting and testing is coming soon.
 
 ###Configuration###
 
-Original found in /config, a customizable version will be pushed very shortly and instructions added here.
+Table name and fields are completely configurable to your needs. Simply publish the package with the following:
+
+	php artisan config:publish jrmadsen67/mahana-hierarchy-laravel
 
 ###Differences in this release###
 
