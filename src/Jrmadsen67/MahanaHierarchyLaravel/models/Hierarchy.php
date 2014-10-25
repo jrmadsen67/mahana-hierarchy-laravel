@@ -31,7 +31,7 @@ class Hierarchy extends \Eloquent {
 		$lineage   = \Config::get('mahana-hierarchy-laravel::hierarchy.lineage');
 		$deep      = \Config::get('mahana-hierarchy-laravel::hierarchy.deep');
 
-		$this->fillable = ['name', 'parent_id', 'lineage', 'deep'];
+		$this->fillable = [$name, $parent_id, $lineage, $deep];
 	}
 
 }
