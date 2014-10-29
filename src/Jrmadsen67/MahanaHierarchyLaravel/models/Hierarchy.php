@@ -26,12 +26,7 @@ class Hierarchy extends \Eloquent {
 
 	public function setFillable()
 	{
-		$name      = \Config::get('mahana-hierarchy-laravel::hierarchy.name');
-		$parent_id = \Config::get('mahana-hierarchy-laravel::hierarchy.parent_id');
-		$lineage   = \Config::get('mahana-hierarchy-laravel::hierarchy.lineage');
-		$deep      = \Config::get('mahana-hierarchy-laravel::hierarchy.deep');
-
-		$this->fillable = [$name, $parent_id, $lineage, $deep];
+		$this->fillable = \Config::get('mahana-hierarchy-laravel::hierarchy.fillable');
 	}
 
 }

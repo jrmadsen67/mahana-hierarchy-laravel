@@ -14,7 +14,9 @@ return [
 	
 	'lineage'           => 'lineage',
 	
-	'deep'              => 'deep',   
+	'deep'              => 'deep', 
+
+	'fillable'			=> ['name', 'parent_id', 'lineage', 'deep', 'object_id', 'object_type_id'],     
 	
 	// match your parent_id default, as null, 0 or whatever
 	'parent_id_default' => null, 
