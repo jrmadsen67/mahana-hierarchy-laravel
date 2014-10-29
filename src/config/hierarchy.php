@@ -16,6 +16,7 @@ return [
 	
 	'deep'              => 'deep', 
 
+	// we do this to make it easier to "piggyback" on this conig with other packages
 	'fillable'			=> ['name', 'parent_id', 'lineage', 'deep', 'object_id', 'object_type_id'],     
 	
 	// match your parent_id default, as null, 0 or whatever
