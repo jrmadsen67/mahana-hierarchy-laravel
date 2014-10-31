@@ -77,7 +77,7 @@ class MahanaHierarchyLaravel {
         if (empty($parent_id)) return [];
         $items = $this->hierarchy_repo->get_descendents($parent_id); 
 
-        if (empty($item)) return [];
+        if (empty($items)) return [];
 
         return $items->toArray();       
     }
